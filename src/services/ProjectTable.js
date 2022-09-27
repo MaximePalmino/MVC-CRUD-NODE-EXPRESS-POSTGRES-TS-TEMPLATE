@@ -1,8 +1,7 @@
+import {pool} from "../config/config.js"
 
-const pool = require("../config/config")
-
-const queryListOfUsers = async() => {
-    await pool.query("SELECT * FROM todo")
+export const queryListOfUsers = () => {
+    pool.query("SELECT * FROM todo")
 } 
 
-module.exports = queryListOfUsers()
+// module.exports = queryListOfUsers()

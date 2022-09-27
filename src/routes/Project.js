@@ -1,9 +1,9 @@
 
-const express = require('express')
+import express from 'express'
 const router = express.Router()
-const getAllUsers = require('../controllers/Project.js')
+import { getAllUsers } from '../controllers/Project.js'
 
 
 router.get('/all', getAllUsers)
 
-module.exports = router 
+export { router as UserRoutes }

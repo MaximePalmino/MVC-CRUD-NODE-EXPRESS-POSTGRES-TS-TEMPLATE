@@ -1,14 +1,13 @@
-const express = require('express')
+import  express  from 'express'
+import cors from 'cors'
+import {UserRoutes} from './routes/Project.js'
 const app = express() 
-const cors = require('cors')
-const getAllUsers = require('./routes/Project')
 
 // MIDDLEWARE
 app.use(cors())
 app.use(express.json()) //req.body
 
-
-app.use('/', require('./routes/Project'))
+app.use('/all', UserRoutes)
 
 
 app.listen(3000, () => {

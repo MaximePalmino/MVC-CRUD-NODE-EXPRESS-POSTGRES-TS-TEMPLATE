@@ -1,14 +1,13 @@
-const {queryListOfUsers}  = require('../services/ProjectTable')
+// const {queryListOfUsers}  = require('../services/ProjectTable')
+import {queryListOfUsers} from '../services/ProjectTable.js'
 
- const getAllUsers = async(req, res) => {
+
+export const getAllUsers = (req, res) => {
     try {
-        console.log(queryListOfUsers)
-       await queryListOfUsers;
-        res.json(getAllUsers.rows)
+       const allUsers = queryListOfUsers();
+        console.log(res.json(allUsers))
+        res.json(queryListOfUsers)
     } catch (error) {
         console.log(error.message)
     }
-
 }
-
-module.exports = getAllUsers
